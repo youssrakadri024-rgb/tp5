@@ -1,15 +1,10 @@
-
 const express = require('express');
+const app = express();
 
-const dotenv = require("dotenv");
+app.get('/', (req, res) => {
+    res.send("Hello");
+});
 
-dotenv.config()
-
-const port = process.env.PORT
-app.get('/', (req, res) =>{
-    res.send("salut from backend")
-})
-
-app.listen(port, () =>{
-    console.log("Server tourne bien au "+ port);
+app.listen(4000, () => {
+    console.log("Server tourne bien");
 });
